@@ -1,0 +1,15 @@
+
+<section>
+    <article>
+        <h3>two-way-data-binding</h3>
+        <div>
+            <input type="text" 
+            [value]="nome"
+            (keyup)="onKeyUp( $event )"  />
+
+            
+
+            <p>Você digitou {{ nome }} </p>
+        </div>
+    </article>
+</section>

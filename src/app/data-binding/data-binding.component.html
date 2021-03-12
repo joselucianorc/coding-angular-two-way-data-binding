@@ -1,0 +1,52 @@
+<section class="event-binding">
+    <article>
+        <h3>Event binding</h3>
+        <div>
+
+            <!-- Por baixo dos panos executa um on-click -->
+            <!-- <button on-click="botaoClicado()"
+                class="btn btn-primary">
+                Me clique!
+            </button> -->
+
+            <!-- Form mais fácil -->
+            <button (click)="botaoClicado()"
+                class="btn btn-primary">
+                Me clique!
+            </button>
+
+            <br><br>
+
+        
+            <!-- 
+            Usando diretamente o event
+            <input type="text"
+                (keyup)="onKeyUp(  $event  )" 
+                (keyup.enter)="salvarValor($event.target.value)" 
+                (blur)="salvarValor($event.target.value)" /> -->
+
+            <!-- Por trás dos panos usa o on- antes do evento -->
+            <!-- <input type="text"
+                on-keyup="onKeyUp( $event )" 
+                on-keyup.enter="salvarValor(campoInput.value)" 
+                on-blur="salvarValor(campoInput.value)" 
+                #campoInput/> -->
+
+            <input type="text"
+                (keyup)="onKeyUp( $event )" 
+                (keyup.enter)="salvarValor(campoInput.value)" 
+                (blur)="salvarValor(campoInput.value)" 
+                #campoInput/>
+
+            <p>Valor atual: {{ valorAtual }}</p>
+            <p>Valor salvo: {{ valorSalvo }}</p>
+
+            <span
+                (mouseover)="onMouseOverOut()"
+                (mouseout)="onMouseOverOut()"
+                [class.highlight]="isMouseOver">
+                    Passe o mouse sobre mim
+            </span>
+        </div>
+    </article>
+</section> 
